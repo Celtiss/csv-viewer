@@ -1,0 +1,9 @@
+@import '../../vendor/_varibles.scss';
+
+.page {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: $background-default;
+}
