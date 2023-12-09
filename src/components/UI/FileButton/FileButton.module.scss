@@ -1,0 +1,37 @@
+@import '../../../vendor/_varibles.scss';
+
+
+.file {
+    max-width: 274px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: $background-color-button-default;
+    padding: 13px 75px;
+    box-sizing: border-box;
+    transition: .3s;
+
+    &:hover {
+        background-color: $background-color-button-hover;
+    }
+
+    &:active {
+        background-color: $background-color-button-pressed;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &__buttonText {
+        margin: 0;
+        padding: 0;
+        @include text(
+        $font-family-default,
+        $font-medium-button-16,
+        $weight-400,
+        $line-height-medium-button-16,
+        $color-button-text
+        );
+    }
+}

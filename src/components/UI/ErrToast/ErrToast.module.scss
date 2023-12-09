@@ -1,0 +1,27 @@
+@import '../../../vendor/_varibles.scss';
+
+.err {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 720px;
+    width: 100%;
+    padding: 33px 53px 29px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: $background-error;
+
+    &__message {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        @include text(
+            $font-family-default,
+            $font-error-20,
+            $weight-400,
+            $line-height-error,
+            $color-button-text
+        );
+    }
+}
