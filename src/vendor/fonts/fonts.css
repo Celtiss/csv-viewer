@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+    url('./noto_sans/noto-sans.woff2') format('woff2'),
+    url('./noto_sans/noto-sans.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      url('./inter/Inter-Regular.woff2') format('woff2'),
+      url('./inter/Inter-Regular.woff') format('woff');
+  }

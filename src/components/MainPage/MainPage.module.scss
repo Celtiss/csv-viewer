@@ -1,0 +1,41 @@
+@import '../../vendor/_varibles.scss';
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-default;
+
+    &__container {
+        max-width: 823px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 75px;
+        justify-content: center;
+        align-items: center;
+        padding: 99px 15px 112px;
+        box-sizing: border-box;
+        background-color: $background-white;
+        box-shadow: $box-shadow-main;
+        border-radius: 10px;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        @include text(
+            $font-family-default,
+            $font-main-title-24,
+            $weight-400,
+            $line-height-main,
+            $color-main-text
+        );
+    }
+}

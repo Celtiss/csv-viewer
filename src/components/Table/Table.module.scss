@@ -1,0 +1,74 @@
+@import '../../vendor/_varibles.scss';
+
+.table {
+    background-color: $background-white;
+    max-width: 1407px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    &__theads {
+        width: 100%;
+        display: grid;
+        border-bottom: 1px solid $border-table-color;
+        grid-template-columns: 
+            minmax(min-content, 313px) 
+            minmax(min-content, 250px) 
+            minmax(min-content, 190px) 
+            minmax(min-content, 170px) 
+            minmax(min-content, 482px);
+    }
+
+    &__thead {
+        text-align: start;
+        border-right: 1px solid $border-table-color;
+        padding: 18px 23px 16px;
+        box-sizing: border-box;
+        @include text(
+        $font-family-table-title,
+        $font-table-title-14,
+        $weight-400,
+        $line-height-table-title,
+        $color-table-text
+        );
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 
+            minmax(min-content, 313px) 
+            minmax(min-content, 250px) 
+            minmax(min-content, 190px) 
+            minmax(min-content, 170px) 
+            minmax(min-content, 482px);
+        border-bottom: 1px solid $border-table-color;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: $background-table-row-hover;
+        }
+    }
+
+    &__cell {
+        padding: 14px 23px;
+        box-sizing: border-box;
+        @include text(
+            $font-family-table-text,
+            $font-table-text-12,
+            $weight-400,
+            $line-height-table-text,
+            $color-table-text
+        );
+    }
+}

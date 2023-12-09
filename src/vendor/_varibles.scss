@@ -1,0 +1,55 @@
+@mixin text($fontFamily, $size, $weight, $lineHeight, $color) {
+  font-family: $fontFamily, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHeight;
+  color: $color;
+  text-decoration: none;
+}
+
+
+/* FONTS */
+
+/* font-family */
+$font-family-default: 'Noto Sans';
+$font-family-table-title: 'Inter';
+$font-family-table-text: 'Noto Sans';
+
+/* font weights */
+$weight-400: 400;
+
+/* font size */
+$font-main-title-24: 24px;
+$font-table-title-14: 14px;
+$font-table-text-12: 12px;
+$font-medium-button-16: 16px;
+$font-small-button-12: 12px;
+$font-error-20: 20px;
+
+/* line-height */
+$line-height-main: 32.69px;
+$line-height-table-title: 17px;
+$line-height-table-text: 16.34px;
+$line-height-medium-button-16: 22px;
+$line-height-small-button-12: 16.34px;
+$line-height-error: 27.24px;
+
+/* COLORS TEXT */
+$color-main-text: #000;
+$color-table-text: #000;
+$color-button-text: #fff;
+
+/* colors-buttons */
+$background-color-button-default: #6346B4;
+$background-color-button-hover: #A88EF0;
+$background-color-button-pressed: #311F63;
+
+/* substrate */
+$background-default: #CBCBCB;
+$background-white: #fff;
+$background-error: #FF6565;
+$background-table-row-hover: rgba(99, 70, 180, 0.25);
+$border-table-color: #C0C0C0;
+
+$box-shadow-main: 2px 4px 9.9px rgba(0, 0, 0, 0.5);
