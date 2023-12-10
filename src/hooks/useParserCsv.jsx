@@ -9,7 +9,7 @@ function useParserCsv() {
     const tableRows = csvText.split('\n');
 
     // Создаем массив заголовоков таблицы
-    const tableTitles = tableRows[0].split(',');
+    const tableTitles = tableRows[0].split(',').map(title => title.trim());
 
     // Парсим данные
     const parsedData = tableRows.slice(1).map((row) => {
