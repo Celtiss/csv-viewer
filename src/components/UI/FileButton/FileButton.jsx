@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import styles from './FileButton.module.scss';
 import useParserCsv from '../../../hooks/useParserCsv';
 
-function FileButton({ showErrToast }) {
+function FileButton({ showErrToast, toggleLocalStorageStaus }) {
   // Хук для парсинга csv файла
   const { parcedFile, parseCsv, isParced } = useParserCsv();
 
@@ -11,6 +11,7 @@ function FileButton({ showErrToast }) {
     if(isParced) {
       localStorage.clear();
       localStorage.setItem('csvFile',JSON.stringify(parcedFile));
+      toggleLocalStorageStaus(true);
     }
   }, [parcedFile, isParced]);
 
