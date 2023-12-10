@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './Table.module.scss';
 import TableRow from './TableRow/TableRow';
 
-function Table() {
+function Table({ csvData }) {
+  console.log(csvData);
   return (
     <table className={styles.table}>
       <thead>
@@ -15,10 +16,9 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
+        {csvData.map((csvItem) => (
+          <TableRow key={csvItem.id} csvItem={csvItem} />
+        ))}
       </tbody>
     </table>
   );

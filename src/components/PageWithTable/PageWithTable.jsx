@@ -3,12 +3,12 @@ import FileButton from '../UI/FileButton/FileButton';
 import Table from '../Table/Table';
 import ErrToast from '../UI/ErrToast/ErrToast';
 
-function PageWithTable({ toggleLocalStorageStaus, isErr, showErrToast }) {
+function PageWithTable({ csvData, putCsvData, isErr, showErrToast }) {
     return (
         <section className={styles.tablePage}>
             {isErr && <ErrToast />}
-            <FileButton showErrToast={showErrToast} toggleLocalStorageStaus={toggleLocalStorageStaus} />
-            <Table />
+            <FileButton putCsvData={putCsvData} showErrToast={showErrToast} />
+            <Table csvData={csvData} />
         </section>
       )
 }
