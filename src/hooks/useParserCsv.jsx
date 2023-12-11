@@ -16,6 +16,12 @@ function useParserCsv() {
 
         const rowData = row.split(',').map(item => item.replace(/"/g, '')); // Получаем массив элементов строки
 
+        // Если длина массива больше 4, то есть это адресс, то возвращаем запятые
+        if(rowData.length > 4) {
+            const address = rowData.slice(4).join(',');
+            rowData.splice(4, rowData.length - 4, address);
+        }
+
         const rowObject = {}; // Объект, где будут хранится данные для одной строки таблицы {name, phone, email...}
         tableTitles.forEach(( key, index) => {
             rowObject[key] = rowData[index];

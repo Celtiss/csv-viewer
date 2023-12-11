@@ -29,6 +29,7 @@ function FileButton({ putCsvData, showErrToast }) {
   
           // Декодировка данных из файла
           const decoderedText = new TextDecoder('windows-1251').decode(buffer);
+          console.log(decoderedText);
           parseCsv(decoderedText);
         } catch (err) {
           console.err('Ошибка чтения файла:', err);
