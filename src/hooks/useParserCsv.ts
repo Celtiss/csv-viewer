@@ -1,10 +1,17 @@
 import { useState } from 'react';
+import CsvParceredData from '../models/CsvParceredData';
 
-function useParserCsv() {
-    const [parcedFile, setParcedFile] = useState([]); // Стейт для распарсенных данных
-    const [isParced, setParcedStatus] = useState(false); // Стейт о статусе парсинга
+type parserReturn = {
+    parcedFile: CsvParceredData[];
+    parseCsv: (csvText: string) => void;
+    isParced: boolean;
+}
 
-    const parseCsv = (csvText) => {
+function useParserCsv():parserReturn {
+    const [parcedFile, setParcedFile] = useState<CsvParceredData[]>([]); // Стейт для распарсенных данных
+    const [isParced, setParcedStatus] = useState<boolean>(false); // Стейт о статусе парсинга
+
+    const parseCsv = (csvText: string):void => {
     // Создаем массив из каждой новой строки в файле
     const tableRows = csvText.split('\n');
 
@@ -12,7 +19,7 @@ function useParserCsv() {
     const tableTitles = tableRows[0].split(',').map(title => title.trim());
 
     // Парсим данные
-    const parsedData = tableRows.slice(1, -1).map((row) => {
+    const parsedData:CsvParceredData[] = tableRows.slice(1, -1).map((row) => {
 
         const rowData = row.split(',').map(item => item.replace(/"/g, '')); // Получаем массив элементов строки
 
