@@ -15,11 +15,11 @@
         display: grid;
         border-bottom: 1px solid $border-table-color;
         grid-template-columns: 
-            minmax(min-content, 313px) 
-            minmax(min-content, 250px) 
-            minmax(min-content, 190px) 
-            minmax(min-content, 170px) 
-            minmax(min-content, 482px);
+            minmax(150px, 313px) 
+            minmax(125px, 250px) 
+            minmax(95px, 190px) 
+            minmax(85px, 170px) 
+            minmax(241px, 482px);
     }
 
     &__thead {
@@ -44,11 +44,11 @@
         width: 100%;
         display: grid;
         grid-template-columns: 
-            minmax(min-content, 313px) 
-            minmax(min-content, 250px) 
-            minmax(min-content, 190px) 
-            minmax(min-content, 170px) 
-            minmax(min-content, 482px);
+            minmax(150px, 313px) 
+            minmax(125px, 250px) 
+            minmax(95px, 190px) 
+            minmax(85px, 170px) 
+            minmax(241px, 482px);
         border-bottom: 1px solid $border-table-color;
 
         &:last-child{
@@ -63,6 +63,9 @@
     &__cell {
         padding: 14px 23px;
         box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         @include text(
             $font-family-table-text,
             $font-table-text-12,
