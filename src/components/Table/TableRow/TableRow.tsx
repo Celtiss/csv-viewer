@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from '../Table.module.scss';
+import CsvRenderedData from '../../../models/CsvRenderedData';
 
-function TableRow({ csvItem }) {
+interface TableRowProps {
+  csvItem: CsvRenderedData;
+}
+
+const TableRow:FC <TableRowProps> = ({ csvItem }) => {
   return (
     <tr className={styles.table__row}>
         <td className={styles.table__cell}>{csvItem.name}</td>

@@ -1,8 +1,14 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, FC} from 'react'
 import styles from './FileButton.module.scss';
-import useParserCsv from '../../../hooks/useParserCsv';
+import CsvParceredData from '../../../models/CsvParceredData.ts';
+import useParserCsv from '../../../hooks/useParserCsv.ts';
 
-function FileButton({ putCsvData, showErrToast }) {
+interface FileButtonProps {
+  putCsvData: (parcedFile: CsvParceredData[]) => void;
+  showErrToast: () => void;
+}
+
+const FileButton: FC <FileButtonProps> = ({ putCsvData, showErrToast }) => {
   // Хук для парсинга csv файла
   const { parcedFile, parseCsv, isParced } = useParserCsv();
 
@@ -20,7 +26,7 @@ function FileButton({ putCsvData, showErrToast }) {
     // Существует ли файл
     if (file) {
       // Проверка формата файла
-      const isCsv = file.name.toLowerCase().endsWith('.csv');
+      const isCsv: boolean = file.name.toLowerCase().endsWith('.csv');
   
       // Если формат файла .csv, то читаем и парсим файл, иначе показываем ошибку
       if (isCsv) {
@@ -29,10 +35,9 @@ function FileButton({ putCsvData, showErrToast }) {
   
           // Декодировка данных из файла
           const decoderedText = new TextDecoder('windows-1251').decode(buffer);
-          console.log(decoderedText);
           parseCsv(decoderedText);
         } catch (err) {
-          console.err('Ошибка чтения файла:', err);
+          console.log('Ошибка чтения файла:', err);
         }
       } else {
         showErrToast();
