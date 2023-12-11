@@ -28,8 +28,8 @@ function FileButton({ putCsvData, showErrToast }) {
           const buffer = await file.arrayBuffer();
   
           // Декодировка данных из файла
-          const text = new TextDecoder('windows-1251').decode(buffer);
-          parseCsv(text);
+          const decoderedText = new TextDecoder('windows-1251').decode(buffer);
+          parseCsv(decoderedText);
         } catch (err) {
           console.err('Ошибка чтения файла:', err);
         }

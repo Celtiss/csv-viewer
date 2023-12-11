@@ -4,7 +4,6 @@ import FileButton from '../UI/FileButton/FileButton';
 import ErrToast from '../UI/ErrToast/ErrToast';
 
 function Main({ putCsvData, isErr, showErrToast }) {
-  
   return (
     <section className={styles.main}>
       {isErr && <ErrToast />}

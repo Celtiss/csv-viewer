@@ -12,9 +12,9 @@ function useParserCsv() {
     const tableTitles = tableRows[0].split(',').map(title => title.trim());
 
     // Парсим данные
-    const parsedData = tableRows.slice(1).map((row) => {
+    const parsedData = tableRows.slice(1, -1).map((row) => {
 
-        const rowData = row.split(','); // Получаем массив элементов строки
+        const rowData = row.split(',').map(item => item.replace(/"/g, '')); // Получаем массив элементов строки
 
         const rowObject = {}; // Объект, где будут хранится данные для одной строки таблицы {name, phone, email...}
         tableTitles.forEach(( key, index) => {

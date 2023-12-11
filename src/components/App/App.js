@@ -85,8 +85,7 @@ function App() {
             isLocalCsv={isLocalCsv}
             csvData={csvData}
             putCsvData={putCsvData}
-            isErr={isErr}
-            showErrToast={showErrToast}
+            toggleLocalStorageStaus={toggleLocalStorageStaus}
             />
           } 
         />

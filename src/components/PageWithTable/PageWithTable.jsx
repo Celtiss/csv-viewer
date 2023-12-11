@@ -1,13 +1,19 @@
+import {useNavigate} from 'react-router-dom';
 import styles from './PageWithTable.module.scss';
-import FileButton from '../UI/FileButton/FileButton';
 import Table from '../Table/Table';
-import ErrToast from '../UI/ErrToast/ErrToast';
 
-function PageWithTable({ csvData, putCsvData, isErr, showErrToast }) {
+function PageWithTable({ csvData, toggleLocalStorageStaus }) {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        localStorage.clear();
+        toggleLocalStorageStaus(false);
+        navigate('/main', {replace: true});
+    };
+
     return (
         <section className={styles.tablePage}>
-            {isErr && <ErrToast />}
-            <FileButton putCsvData={putCsvData} showErrToast={showErrToast} />
+            <button className={styles.tablePage__button} onClick={handleButtonClick}>Загрузить новый файл</button>
             <Table csvData={csvData} />
         </section>
       )
